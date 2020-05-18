@@ -1,1 +1,138 @@
-/* this file is for your custom CSS. */
+/* Typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap');
+
+body { font: 18px 'Titillium Web', sans-serif; }
+
+/* Containers */
+
+.content-wrapper {
+  height: 100vh;
+  overflow: none;
+  
+  display: flex;
+  
+  text-align: center;
+}
+
+.left-column {  
+  flex: 1;
+  
+  font-size: 22px;
+  
+  border: 10px solid grey;
+  background-color: lightgrey;
+}
+
+.right-column {
+  flex: 4;
+}
+
+/* Content */
+
+.logo,
+.controls { 
+  font-weight: 700;
+  
+  background-color: grey;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 4px;
+  margin-bottom: 5px;
+  
+  text-align: center;
+}
+
+.button,
+.list-name { cursor: pointer; }
+
+#new-list {
+  background-color: pink;
+  border: 3px solid red;
+  color: red;
+}
+
+#new-task {
+  background-color: lightblue;
+  border: 3px solid blue;
+  color: blue;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: 700;
+  
+  color: lightgreen;
+}
+
+.list-category,
+#all-tasks {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.list-name {
+  position: relative;
+  font-weight: 400;
+  font-size: 24px;
+  
+  list-style: none;
+  background-color: white;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.list-color {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  
+  height: 24px;
+  width: 24px;
+  
+  border-radius: 50%;
+  background-color: teal;
+}
+
+.list-name-title {
+  padding: 15px 0;
+  
+  font-size: 70px;
+  font-weight: 900;
+}
+
+.day {
+  font-size: 36px;
+}
+
+.task {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  width: 35%;
+  
+  margin: 8px auto;
+  
+  font-size: 18px;
+  text-align: left;
+}
+
+.task-time {
+  width: 50px;
+  
+  margin-right: 15px;
+  
+  text-align: right;
+  font-weight: 700;
+}
+
+.task-description {
+  font-size: 22px;
+}
