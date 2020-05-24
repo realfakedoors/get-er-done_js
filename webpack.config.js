@@ -15,5 +15,19 @@ module.exports = {
       ignored: /node_modules/
     }
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  }
 };

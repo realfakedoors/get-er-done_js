@@ -10,9 +10,9 @@ gulp.task('serve', function(done) {
       }
   });
 
-  gulp.watch("*.html").on('change', browserSync.reload);
-  gulp.watch("*.css").on('change', browserSync.reload);
-  gulp.watch("*.js").on('change', browserSync.reload);
+  gulp.watch("./dist/*.html").on('change', browserSync.reload);
+  gulp.watch("./dist/*.css").on('change', browserSync.reload);
+  gulp.watch("./dist/*.js").on('change', browserSync.reload);
   
   done();
 });

@@ -37,6 +37,13 @@ body { font: 18px 'Titillium Web', sans-serif; }
   background-color: grey;
 }
 
+.logo {
+  font-size: 40px;
+  font-weight: 700;
+  
+  color: lightgreen;
+}
+
 .controls {
   display: flex;
   justify-content: space-between;
@@ -52,23 +59,42 @@ body { font: 18px 'Titillium Web', sans-serif; }
 .button,
 .list-name { cursor: pointer; }
 
+#new-category {
+  background-color: lightyellow;
+  border: 3px solid green;
+  color: green;
+}
+
 #new-list {
-  background-color: pink;
+  background-color: lightblue;
   border: 3px solid red;
   color: red;
 }
 
 #new-task {
-  background-color: lightblue;
+  background-color: orange;
   border: 3px solid blue;
   color: blue;
 }
 
-.logo {
-  font-size: 40px;
-  font-weight: 700;
+input,
+select {
+  display: block;
   
-  color: lightgreen;
+  height: 30px;
+  
+  margin: 4px auto;
+  
+  font: 16px 'Titillium Web', sans-serif;
+  
+  border-radius: 10px;
+  border: 2px solid grey;
+}
+
+#submit-button { 
+  display: block;
+  
+  margin: 5px auto;
 }
 
 .list-category,

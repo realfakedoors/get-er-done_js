@@ -1,2 +1,3 @@
 # Get 'er Done
-A basic todo list app, written in Javascript.
+
+A basic single-page todo list app, written in Javascript and bundled with webpack.
