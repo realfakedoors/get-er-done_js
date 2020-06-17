@@ -1,16 +1,18 @@
-const newCategory = (name) => {
-  return { name };
-}
+const newCategory = () => {
+  let lists = [];
+  
+  return { lists };
+};
 
-const newList = (category, name) => {
+const newList = (name) => {
   let color = "#E03A53";
   let tasks = [];
   
-  return { category, name, color, tasks };
+  return { name, color, tasks };
 };
 
-const newTask = (list, description, datetime) => {  
-  return { list, description, datetime };
+const newTask = (description, datetime) => {  
+  return { description, datetime };
 };
 
 export { newCategory, newTask, newList };

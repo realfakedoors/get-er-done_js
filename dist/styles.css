@@ -79,16 +79,25 @@ body { font: 18px 'Titillium Web', sans-serif; }
 
 input,
 select {
-  display: block;
-  
-  height: 30px;
+  height: 33px;
+  width: 100%;
   
   margin: 4px auto;
   
   font: 16px 'Titillium Web', sans-serif;
+  text-align: center;
   
   border-radius: 10px;
   border: 2px solid grey;
+}
+
+.field { 
+  display: inline-block;
+  width: 45%;
+  
+  margin-right: 5px;
+  
+  text-align: right;
 }
 
 #submit-button { 

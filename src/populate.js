@@ -1,4 +1,6 @@
-function populateForm(fields, submit){
+import { validateCategory, validateList, validateTask } from "./validate";
+
+function populateForm(fields, submit, validation){
   const form = document.getElementById('creation-form');
   
   while (form.firstChild) {
@@ -17,7 +19,20 @@ function populateForm(fields, submit){
   submitButton.setAttribute('type', 'button');
   submitButton.setAttribute('id', 'submit-button');
   submitButton.setAttribute('value', submit);
+  submitButton.setAttribute('onsubmit', `return ${validation}`);
   form.appendChild(submitButton);
+}
+
+function allCategories(){
+  let categories = [];
+  const names = Object.keys(localStorage);
+  const i = names.length;
+  
+  while ( i-- ) {
+     categories.push( JSON.parse(localStorage.getItem(names[i])) );
+  }
+  
+  return categories;
 }
 
 function newCategoryForm(){
@@ -26,10 +41,10 @@ function newCategoryForm(){
   categoryName.setAttribute('id', 'category-name-field');
   categoryName.setAttribute('placeholder', 'Category Name');
   
-  populateForm([categoryName], "Create Category");
+  populateForm([categoryName], "Create Category", "");
 }
 
-const categories = ['Urgent', 'Work', 'Fun', 'Travel', 'Social'];
+const categories = Object.keys(localStorage);
 
 function showCategories(){
   const listCategoryLabel = document.createElement('label');
@@ -55,7 +70,9 @@ function newListForm(){
   listName.setAttribute('id', 'list-name-field');
   listName.setAttribute('placeholder', 'List Name');
   
-  populateForm([showCategories()[0], showCategories()[1], listName], "Create List");
+  let categoryDropdown = showCategories();
+  
+  populateForm([categoryDropdown[0], categoryDropdown[1], listName], "Create List", "validateList()")
 }
 
 const lists = ['Safety Classes', 'Horse Riding Practice', 'Drone Photography'];
@@ -84,7 +101,10 @@ function newTaskForm(){
   taskName.setAttribute('id', 'task-name-field');
   taskName.setAttribute('placeholder', 'Task Name');
   
-  populateForm([showCategories()[0], showCategories()[1], showLists()[0], showLists()[1], taskName], "Create Task")
+  let categoryDropdown = showCategories();
+  let listDropdown = showLists();
+  
+  populateForm([categoryDropdown[0], categoryDropdown[1], listDropdown[0], listDropdown[1], taskName], "Create Task", "validateTask()")
 }
 
-export { newCategoryForm, newListForm, newTaskForm };
+export { newCategoryForm, newListForm, newTaskForm, allCategories };
